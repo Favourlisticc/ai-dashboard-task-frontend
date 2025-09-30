@@ -36,7 +36,7 @@ const AdminLogin = ({ onAdminLogin }) => {
     setError('');
 
     try {
-      const response = await fetch('https://ai-dashboard-task-backend.onrender.com/api/admin/login', {
+      const response = await fetch('https://ai-dashboard-task-backend-1.onrender.com/api/admin/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

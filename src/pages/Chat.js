@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { Send, Bot, User, Loader, Crown, Lock, AlertCircle, Info, Pencil } from 'lucide-react';
 import { pageTransition } from '../animations/gsapAnimations';
 
-const API_BASE_URL = 'https://ai-dashboard-task-backend.onrender.com';
+const API_BASE_URL = 'https://ai-dashboard-task-backend-1.onrender.com';
 
 const Chat = () => {
   const pageRef = useRef(null);

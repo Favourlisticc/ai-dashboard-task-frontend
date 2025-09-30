@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'https://ai-dashboard-task-backend.onrender.com/api/users';
+const API_URL = process.env.REACT_APP_API_URL || 'https://ai-dashboard-task-backend-1.onrender.com/api/users';
 
 class ChatHistoryService {
   constructor() {

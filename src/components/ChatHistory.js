@@ -109,7 +109,7 @@ const ChatHistory = ({ history, onChatDeleted, initialSelectedChat = null, onSel
 
     try {
       if (sessionId) {
-        await fetch(`https://ai-dashboard-task-backend.onrender.com/api/users/chat/history/${sessionId}`, {
+        await fetch(`https://ai-dashboard-task-backend-1.onrender.com/api/users/chat/history/${sessionId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`

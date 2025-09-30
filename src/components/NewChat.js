@@ -39,7 +39,7 @@ const NewChat = ({ onNewChat, user }) => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://ai-dashboard-task-backend.onrender.com/api/users/chat/message', {
+      const response = await fetch('https://ai-dashboard-task-backend-1.onrender.com/api/users/chat/message', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
