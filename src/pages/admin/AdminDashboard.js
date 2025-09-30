@@ -32,21 +32,21 @@ const AdminDashboard = ({ admin, onLogout }) => {
       const token = localStorage.getItem('adminToken');
 
       // Load stats
-      const statsResponse = await fetch('http://localhost:3005/api/admin/stats', {
+      const statsResponse = await fetch('https://ai-dashboard-task-backend.onrender.com/api/admin/stats', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const statsData = await statsResponse.json();
       if (statsData.success) setStats(statsData.stats);
 
       // Load users
-      const usersResponse = await fetch('http://localhost:3005/api/admin/users?limit=100', {
+      const usersResponse = await fetch('https://ai-dashboard-task-backend.onrender.com/api/admin/users?limit=100', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const usersData = await usersResponse.json();
       if (usersData.success) setUsers(usersData.users);
 
       // Load chats
-      const chatsResponse = await fetch('http://localhost:3005/api/admin/chats?limit=50', {
+      const chatsResponse = await fetch('https://ai-dashboard-task-backend.onrender.com/api/admin/chats?limit=50', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const chatsData = await chatsResponse.json();
@@ -64,7 +64,7 @@ const AdminDashboard = ({ admin, onLogout }) => {
 
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`http://localhost:3005/api/admin/users/${userId}`, {
+      const response = await fetch(`https://ai-dashboard-task-backend.onrender.com/api/admin/users/${userId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -88,7 +88,7 @@ const AdminDashboard = ({ admin, onLogout }) => {
 
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`http://localhost:3005/api/admin/chats/${chatId}`, {
+      const response = await fetch(`https://ai-dashboard-task-backend.onrender.com/api/admin/chats/${chatId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -110,7 +110,7 @@ const AdminDashboard = ({ admin, onLogout }) => {
   const handleViewUser = async (userId) => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`http://localhost:3005/api/admin/users/${userId}`, {
+      const response = await fetch(`https://ai-dashboard-task-backend.onrender.com/api/admin/users/${userId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -126,7 +126,7 @@ const AdminDashboard = ({ admin, onLogout }) => {
   const handleViewChat = async (chatId) => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`http://localhost:3005/api/admin/chats/${chatId}`, {
+      const response = await fetch(`https://ai-dashboard-task-backend.onrender.com/api/admin/chats/${chatId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 

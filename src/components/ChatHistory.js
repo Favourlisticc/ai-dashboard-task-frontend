@@ -109,7 +109,7 @@ const ChatHistory = ({ history, onChatDeleted, initialSelectedChat = null, onSel
 
     try {
       if (sessionId) {
-        await fetch(`http://localhost:3005/api/users/chat/history/${sessionId}`, {
+        await fetch(`https://ai-dashboard-task-backend.onrender.com/api/users/chat/history/${sessionId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -135,7 +135,7 @@ const ChatHistory = ({ history, onChatDeleted, initialSelectedChat = null, onSel
         onSelectChat(sessionId);
       }
       
-      const response = await fetch(`http://localhost:3005/api/users/chat/history/${sessionId}`, {
+      const response = await fetch(`https://ai-dashboard-task-backend.onrender.com/api/users/chat/history/${sessionId}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -190,7 +190,7 @@ const ChatHistory = ({ history, onChatDeleted, initialSelectedChat = null, onSel
     setIsLoadingResponse(true);
 
     try {
-      const response = await fetch('http://localhost:3005/api/users/chat/message', {
+      const response = await fetch('https://ai-dashboard-task-backend.onrender.com/api/users/chat/message', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
