@@ -106,62 +106,6 @@ const AdminLogin = ({ onAdminLogin }) => {
           <p className="text-white/70">Sign in to access the admin dashboard</p>
         </div>
 
-        {/* Demo Credentials Section */}
-        <div className="bg-yellow-500/20 border border-yellow-500/50 rounded-xl p-4 mb-6">
-          <h3 className="text-yellow-200 font-semibold mb-3">Demo Credentials (Click to fill)</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {demoCredentials.map((cred, index) => (
-              <button
-                key={index}
-                onClick={() => fillDemoCredentials(cred)}
-                className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3 text-left hover:bg-yellow-500/20 transition-colors"
-              >
-                <div className="flex justify-between items-start mb-2">
-                  <span className="text-yellow-200 text-sm font-medium">{cred.label}</span>
-                  <span className="text-yellow-300 text-xs bg-yellow-500/20 px-2 py-1 rounded">Click to fill</span>
-                </div>
-                <div className="space-y-1">
-                  <div className="flex items-center justify-between">
-                    <span className="text-yellow-100 text-xs">Email:</span>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        copyToClipboard(cred.email, `email-${index}`);
-                      }}
-                      className="text-yellow-300 hover:text-yellow-100 ml-2"
-                    >
-                      {copiedField === `email-${index}` ? (
-                        <Check className="w-3 h-3" />
-                      ) : (
-                        <Copy className="w-3 h-3" />
-                      )}
-                    </button>
-                  </div>
-                  <p className="text-yellow-100 text-xs font-mono truncate">{cred.email}</p>
-                  
-                  <div className="flex items-center justify-between mt-1">
-                    <span className="text-yellow-100 text-xs">Password:</span>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        copyToClipboard(cred.password, `password-${index}`);
-                      }}
-                      className="text-yellow-300 hover:text-yellow-100 ml-2"
-                    >
-                      {copiedField === `password-${index}` ? (
-                        <Check className="w-3 h-3" />
-                      ) : (
-                        <Copy className="w-3 h-3" />
-                      )}
-                    </button>
-                  </div>
-                  <p className="text-yellow-100 text-xs font-mono truncate">{cred.password}</p>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-
         {error && (
           <div className="bg-red-500/20 border border-red-500/50 text-white p-3 rounded-lg mb-4">
             {error}
